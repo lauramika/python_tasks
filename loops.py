@@ -1,11 +1,16 @@
 def colorize(table_rows):
     # Complete the function here:
 	html_string = ''
-	for html_string in range(1, table_rows, 2):
-		html_string.append("<tr class=\"white\"></tr>\n")
-		return html_string
-	for html_string in range(0, table_rows, 2):
-			html_string.append(" <tr class=\"light-grey\"></tr>\n")
-			return html_string
+	str1 = '<tr class=\"light-grey\"></tr>'
+	str2 = '<tr class=\"white\"></tr>'
+	for i in range(table_rows):
+		if i%2 == 0:
+			html_string = html_string + str1
+			print(html_string)
+			html_string = ''
+		else:
+			html_string = html_string + str2
+			print(html_string)
+			html_string = ''
 # Sample function call
-print(colorize(10))
+colorize(10)
